@@ -17,8 +17,233 @@
         tools:context=".views.DashboardActivity">
 
         <TextView
+            android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/exo_bold"
+            android:text="@string/welcome_to_secure_pay"
+            android:textColor="@color/primary_text_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_placeholder"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/user_palceholder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/exo_medium"
+            android:text="@{dashboardData.name}"
+            android:textColor="@color/primary_text_color"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@+id/img_placeholder"
+            app:layout_constraintTop_toTopOf="@id/img_placeholder" />
+
+        <TextView
+            android:id="@+id/text_manage_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/exo_medium"
+            android:text="@string/let_s_manage_your_money_securely"
+            android:textColor="@color/subtitle_color"
+            app:layout_constraintLeft_toLeftOf="@id/user_name"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+        <ImageView
+            android:id="@+id/img_credit_card"
+            android:layout_width="315dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/main_panel_dashboard"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_placeholder" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_user_balance"
+            android:layout_width="315dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/user_balance_panel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_credit_card">
+
+            <ImageView
+                android:id="@+id/img_money"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_money"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_my_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/exo_medium"
+                android:text="@string/my_balance"
+                android:textColor="@color/primary_text_color"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/img_money"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/exo_medium"
+                android:text="@{dashboardData.balance}"
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/img_money"
+                app:layout_constraintTop_toBottomOf="@id/text_my_balance" />
+
+
+            <ImageView
+                android:id="@+id/img_carrot_up"
+                android:layout_width="12dp"
+                android:layout_height="6dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_carrot_up"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/panel_add_money"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_panel_bg"
+            android:backgroundTint="#292D32"
+            android:onClick="@{() -> dashboardData.onClickedLoadMoney()}"
+            app:layout_constraintEnd_toEndOf="@id/layout_user_balance"
+            app:layout_constraintStart_toStartOf="@id/layout_user_balance"
+            app:layout_constraintTop_toBottomOf="@id/layout_user_balance">
+
+            <ImageView
+                android:id="@+id/img_add_money"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_add_money"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_add_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/exo_medium"
+                android:text="@string/add_money"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/img_add_money"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/panel_send_money"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_panel_bg"
+            android:backgroundTint="#292D32"
+            android:onClick="@{() -> dashboardData.onClickedSendMoney()}"
+            app:layout_constraintEnd_toEndOf="@id/layout_user_balance"
+            app:layout_constraintStart_toStartOf="@id/layout_user_balance"
+            app:layout_constraintTop_toBottomOf="@id/panel_add_money">
+
+            <ImageView
+                android:id="@+id/img_send_money"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_send_money"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_send_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/exo_medium"
+                android:text="@string/transfer_money"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/img_send_money"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/panel_receive_money"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_panel_bg"
+            android:backgroundTint="#292D32"
+            android:onClick="@{() -> dashboardData.onClickedReceiveMoney()}"
+            app:layout_constraintEnd_toEndOf="@id/layout_user_balance"
+            app:layout_constraintStart_toStartOf="@id/layout_user_balance"
+            app:layout_constraintTop_toBottomOf="@id/panel_send_money">
+
+            <ImageView
+                android:id="@+id/img_receive_money"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_receive_money"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_receive_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/exo_medium"
+                android:text="@string/receive_money"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/img_receive_money"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

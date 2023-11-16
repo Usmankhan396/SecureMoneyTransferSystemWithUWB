@@ -6,4 +6,11 @@
     <string name="password">Password</string>
     <string name="enter_your_email">Enter your Email</string>
     <string name="enter_your_password">Enter your Password</string>
+    <string name="welcome_to_secure_pay">Welcome To Secure Pay</string>
+    <string name="let_s_manage_your_money_securely">Let\'s Manage your money securely</string>
+    <string name="my_balance">My Balance</string>
+    <string name="_3_430_90">$3.430.90</string>
+    <string name="add_money">Add Money</string>
+    <string name="transfer_money">Transfer Money</string>
+    <string name="receive_money">Receive Money</string>
 </resources>

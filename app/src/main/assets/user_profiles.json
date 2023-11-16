@@ -3,7 +3,7 @@
     "id": "001",
     "name": "Usman Khan Lodhi",
     "email": "usmankhan@gmail.com",
-    "[password]": "usman123",
+    "password": "usman123",
     "balance": "10000",
     "pin": "12345"
   },
@@ -11,7 +11,7 @@
     "id": "002",
     "name": "admin1",
     "email": "admin1@gmail.com",
-    "[password]": "admin123",
+    "password": "admin123",
     "balance": "10000",
     "pin": "12345"
   },
@@ -19,7 +19,7 @@
     "id": "003",
     "name": "admin2",
     "email": "admin2@gmail.com",
-    "[password]": "admin123",
+    "password": "admin123",
     "balance": "10000",
     "pin": "12345"
   }
